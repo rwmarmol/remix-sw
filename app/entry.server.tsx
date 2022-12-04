@@ -9,7 +9,7 @@ import { getEnvConfig } from './utils/config/index.server';
 const ABORT_DELAY = 5000;
 
 const config = {
-  apiPrefix: getEnvConfig('apiPrefix'),
+  localApiPrefix: getEnvConfig('localApiPrefix'),
 } as Record<string, any>;
 
 export default function handleRequest(

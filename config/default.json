@@ -1,6 +1,6 @@
 {
   "backend": {
-    "swapiUrl": "https://www.swapi.tech/api"
+    "swapiUrl": "https://swapi.py4e.com/api"
   },
-  "apiPrefix": "/apiv1"
+  "localApiPrefix": "/apiv1"
 }
