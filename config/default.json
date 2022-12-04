@@ -1,0 +1,6 @@
+{
+  "backend": {
+    "swapiUrl": "https://www.swapi.tech/api"
+  },
+  "apiPrefix": "/apiv1"
+}

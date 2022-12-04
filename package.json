@@ -1,0 +1,43 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "cross-env NODE_ENV=production run-s build:css build:remix",
+    "build:remix": "remix build",
+    "build:css": "postcss \"app/styles/*.scss\" \"app/routes/*/*/styles/*.scss\" --base app --dir app --ext css --env production",
+    "dev": "cross-env NODE_ENV=development run-p dev:*",
+    "dev:remix": "remix dev",
+    "dev:css": "postcss \"app/styles/*.scss\" \"app/routes/*/*/styles/*.scss\" --base app --dir app --ext css --verbose --watch",
+    "start": "remix-serve build"
+  },
+  "dependencies": {
+    "@remix-run/node": "^1.8.0",
+    "@remix-run/react": "^1.8.0",
+    "@remix-run/serve": "^1.8.0",
+    "isbot": "^3.6.5",
+    "lodash": "^4.17.21",
+    "postcss-advanced-variables": "^3.0.1",
+    "postcss-import": "^15.0.1",
+    "postcss-scss": "^4.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.8.0",
+    "@remix-run/eslint-config": "^1.8.0",
+    "@types/lodash": "^4.14.191",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "autoprefixer": "^10.4.13",
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.1.14",
+    "eslint": "^8.27.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.19",
+    "postcss-cli": "^10.1.0",
+    "typescript": "^4.8.4"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

@@ -1,0 +1,14 @@
+@import "fonts/_font-kanit.scss";
+
+body {
+  font-family: 'Kanit', sans-serif;
+  color: #fff;
+  background-color: $theme-bg-color;
+  background-image: url(/images/background-stars.jpeg);
+  background-size: 2080px auto;
+}
+
+a {
+  color: $turbo-500;
+  text-decoration: none;
+}

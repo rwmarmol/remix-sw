@@ -1,0 +1,30 @@
+{
+  "hdpi": "1440px",
+  "mdpi": "1279px",
+  "medium": "1024px",
+  "mobile": "599.99px",
+
+  "theme-bg-color": "#000000",
+
+  "mine-shaft-50": "#f7f6f6",
+  "mine-shaft-100": "#e4e3e3",
+  "mine-shaft-200": "#c8c7c7",
+  "mine-shaft-300": "#a5a3a3",
+  "mine-shaft-400": "#827f7f",
+  "mine-shaft-500": "#686465",
+  "mine-shaft-600": "#524f4f",
+  "mine-shaft-700": "#444142",
+  "mine-shaft-800": "#383737",
+  "mine-shaft-900": "#282727",
+
+  "turbo-50": "#feffe7",
+  "turbo-100": "#faffc1",
+  "turbo-200": "#faff86",
+  "turbo-300": "#fffe41",
+  "turbo-400": "#fff20d",
+  "turbo-500": "#ffe400",
+  "turbo-600": "#d1a900",
+  "turbo-700": "#a67a02",
+  "turbo-800": "#895e0a",
+  "turbo-900": "#744d0f"
+}
