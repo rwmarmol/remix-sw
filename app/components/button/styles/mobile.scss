@@ -1,0 +1,50 @@
+.sw-button {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  cursor: inherit;
+  border-radius: 8px;
+  line-height: 39px;
+  
+  &--classic {
+    width: fit-content;
+    padding: 0 3em;
+    color: $mine-shaft-900;
+    background-color: $turbo-500;
+    border: solid 1px $turbo-500;
+    
+    &:hover {
+      background-color: $turbo-400;
+      border: solid 1px $turbo-400;
+    }
+  }
+
+  &--outline {
+    width: fit-content;
+    padding: 0 3em;
+    color: $turbo-500;
+    background-color: transparent;
+    border: solid 1px $turbo-500;
+    
+    &:hover {
+      background-color: $turbo-500;
+      color: $mine-shaft-900;
+    }
+  }
+
+  &--link {
+    width: fit-content;
+    padding: 0 1.3em;
+    color: $mine-shaft-100;
+    background-color: transparent;
+    border: solid 1px transparent;
+    
+    &:hover {
+      color: $turbo-500;
+    }
+  }
+
+  &-block {
+    min-width: 100%;
+  }
+}

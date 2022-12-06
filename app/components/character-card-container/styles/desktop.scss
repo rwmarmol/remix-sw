@@ -1,0 +1,20 @@
+@import "components/character-card/styles/desktop.scss";
+
+.character-card-container {
+  padding: 0px;
+  width: 100%;
+  max-width: 980px;
+  background: $mine-shaft-800;
+  border-radius: 8px;
+  margin-bottom: 1em;
+
+  &__button-row {
+    background: $mine-shaft-700;
+    padding: 1em;
+  }
+}
+
+.character-card-container:has(> div.character-card-container--no-results) {
+  background: transparent;
+  margin: auto;
+}

@@ -6,7 +6,7 @@
  * 
  */
 
-export interface starWarsFilm {
+export interface StarWarsFilm {
   title: string;
   episodeId: number;
   openingCrawl: string;

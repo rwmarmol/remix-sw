@@ -8,7 +8,7 @@
  * @attr maxAtmospheringSpeed -- The maximum speed of this starship in the atmosphere. "N/A" if this starship is incapable of atmospheric flight.
  * @attr consumables -- The maximum length of time that this starship can provide consumables for its entire crew without having to resupply.
  */
-interface baseVehicle {
+interface BaseVehicle {
   name: string;
   model: string;
   passengers: string;
@@ -34,7 +34,7 @@ interface baseVehicle {
  * @attr hyperdriveRating -- The class of this starships hyperdrive.
  * 
  */
-export interface starWarsStarship extends baseVehicle {
+export interface StarWarsStarship extends BaseVehicle {
   starshipClass: string;
   hyperdriveRating: string;
   MGLT: string;
@@ -46,6 +46,6 @@ export interface starWarsStarship extends baseVehicle {
  * @attr vehicle_class -- The class of this vehicle, such as "Wheeled" or "Repulsorcraft".
  * 
  */
-export interface starWarsVehicle extends baseVehicle {
+export interface StarWarsVehicle extends BaseVehicle {
   vehicle_class: string 
 }

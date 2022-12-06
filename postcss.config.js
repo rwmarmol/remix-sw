@@ -16,6 +16,7 @@ module.exports = cfg => {
       }),
       require('postcss-advanced-variables')({ variables }),
       require('autoprefixer'),
+      require('postcss-nested'),
       dev ? null : require('cssnano')(),
     ]
   };
