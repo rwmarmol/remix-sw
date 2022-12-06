@@ -1,6 +1,6 @@
 /**
  * Swapi API Response
- * https://swapi.py4e.com/documentation
+ * https://swapi.dev/documentation
  * 
  */
 export interface SwapiResponse {
