@@ -2,5 +2,8 @@
   "backend": {
     "swapiUrl": "https://swapi.py4e.com/api"
   },
-  "localApiPrefix": "/apiv1"
+  "localApiPrefix": "/apiv1",
+  "site": {
+    "logoUrl": "/sw_logo.png"
+  }
 }

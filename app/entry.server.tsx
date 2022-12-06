@@ -10,6 +10,7 @@ const ABORT_DELAY = 5000;
 
 const config = {
   localApiPrefix: getEnvConfig('localApiPrefix'),
+  siteConfig: getEnvConfig('site'),
 } as Record<string, any>;
 
 export default function handleRequest(

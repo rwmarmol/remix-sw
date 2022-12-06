@@ -11,7 +11,7 @@
  * 
  */
 
-export interface Planet {
+export interface StarWarsPlanet {
   name: string;
   diameter: string;
   rotationPeriod: string | number;

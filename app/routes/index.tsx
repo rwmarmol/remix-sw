@@ -1,9 +1,8 @@
 /**
  * Remix & React
  */
-import { useEffect } from "react";
 import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { useLoaderData, useTransition } from "@remix-run/react";
 import type { LoaderFunction } from "@remix-run/node";
 
 /**
@@ -15,58 +14,63 @@ import { StarWarsApi } from "~/loaders/starwars.server";
  * Utils and interfaces
  */
 import { useConfigContext } from "~/utils/config/context";
+import type { SwapiResponse } from "~/interfaces/starwars/swapi";
+import type { StarWarsCharacter  } from "~/interfaces/starwars/character";
+import type { StarWarsFilm } from "~/interfaces/starwars/film";
 
-export const loader: LoaderFunction = async ({ request, params }) => {
-  const [ characters ] = await Promise.all([
-    StarWarsApi.getCharacters()
+/**
+ * Components
+ */
+import CharacterCardContainer from "~/components/character-card-container";
+import Hero from "~/components/hero";
+
+export const loader: LoaderFunction = async ({ request }) => {
+  const url = new URL(request.url);
+  const page = (url.searchParams.get("page")) ? url.searchParams.get("page") : 1;
+
+  const [ characters, films ] = await Promise.all([
+    StarWarsApi.getCharacters(page),
+    StarWarsApi.getFilms(),
   ]);
   return json({
-    characters,
+    characters: characters,
+    films: films?.results,
   })
 }
 
 interface LoaderData {
-  characters: any
+  characters: SwapiResponse;
+  films: StarWarsFilm[];
 }
 
 
 export default function Index() {
 
   const config = useConfigContext();
-  const { characters } = useLoaderData() as LoaderData;
+  const { characters, films } = useLoaderData() as LoaderData;
 
-  useEffect(() => {
-    console.log(characters)
-  })
+  const transition = useTransition();
+  const isLoading = transition.state !== "idle";
 
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix {config.localApiPrefix}</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div className="main-container" style={{ fontFamily: "Kanit, sans-serif", lineHeight: "1.4" }}>
+
+      <Hero
+        logoUrl={config.siteConfig.logoUrl}
+        title="Star Wars Characters directory"
+        pretitle="May the force be with you"
+        description="Characters directory from 'swapi' Star Wars API"
+      />
+
+
+      <CharacterCardContainer
+        characters={characters?.results as StarWarsCharacter[]}
+        films={films}
+        nextPage={characters?.next}
+        previousPage={characters?.previous}
+        count={characters.count}
+        isLoading={isLoading}
+      />
     </div>
   );
 }
