@@ -1,0 +1,59 @@
+.character-card {
+  font-family: 'Kanit', sans-serif;
+  cursor: inherit;
+  background-color: $mine-shaft-800;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0.8em 1em;
+  flex-wrap: wrap;
+  gap: 0.8em;
+
+  .text {
+    color: #929292;
+  }
+
+  label {
+    letter-spacing: 0px;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-style: italic;
+    color: $turbo-100;
+  }
+
+  &-main {
+    min-width: 70%;
+    &__name {
+      text-transform: uppercase;
+      font-style: italic;
+      letter-spacing: 0px;
+    }
+    &__description {
+      font-weight: 300;
+      color: $mine-shaft-300;
+      font-size: 12px;
+    }
+    &__name, &__description {
+      margin: 0;
+    }
+  }
+
+  &-data {
+    color: $mine-shaft-100;
+    letter-spacing: 0.8px;
+    font-size: 12px;
+    font-weight: 300;
+    align-self: flex-start;
+
+    &*{
+      margin: 0;
+    }
+  }
+
+  &-thumbnail {
+    border-radius: 5px;
+    max-width: 45px;
+    max-height: 45px;
+  }
+}

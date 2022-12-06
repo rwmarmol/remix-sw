@@ -1,6 +1,11 @@
+@import "components/button/styles/mobile.scss";
+@import "components/loading/styles/mobile.scss";
+@import "components/hero/styles/mobile.scss";
+@import "components/character-card-container/styles/mobile.scss";
 @import "fonts/_font-kanit.scss";
 
 body {
+  margin: 0;
   font-family: 'Kanit', sans-serif;
   color: #fff;
   background-color: $theme-bg-color;
